@@ -5,12 +5,16 @@
 {% endblock %}
 
 {% block body %}
-      <h1>Flights</h1>
-      <ul>
-          {% for flight in flights %}
-              <li>
-                <a href="{% url 'flight' flight.id %}">{{ flight }}</a>
-              </li>
-          {% endfor %}
-      </ul>
+      <div class="text-center">
+        <h1>Valley Airport's Current Flight List</h1>
+      </div>
+      <div class="text-center-2">
+        <ul>
+            {% for flight in flights %}
+                <li>
+                  <a href="{% url 'flight' flight.id %}">{{ flight }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+      </div>
 {% endblock %}
