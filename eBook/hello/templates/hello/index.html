@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-      <title>Flights</title>
-  </head>
-  <body>
+{% extends "hello/base.html" %}
+
+{% block title %}
+  Flights
+{% endblock %}
+
+{% block body %}
       <h1>Flights</h1>
       <ul>
           {% for flight in flights %}
@@ -12,6 +13,4 @@
               </li>
           {% endfor %}
       </ul>
-  </body>
-
-</html>
+{% endblock %}
