@@ -5,13 +5,19 @@
 {% endblock %}
 
 {% block body %}
-      <h1>Flight: {{ flight.id }}</h1>
+      <div class="text-center">
+        <h1>Flight {{ flight.id }} Web Page</h1>
+      </div>
+      <h3>Flight {{ flight.id }} Information</h3>
       <ul>
           <li>Origin: {{ flight.origin }}</li>
           <li>Destination: {{ flight.destination }}</li>
           <li>Duration: {{ flight.duration }} minutes</li>
       </ul>
-      <h2>Passengers</h2>
+      <div class="text-center-2">
+        <h2>Current List of Flight {{ flight.id }} Passengers</h2>
+      </div>
+      <h3>Passengers</h3>
       <ul>
         {% for passenger in passengers %}
             <li>{{ passenger }}</li>
@@ -19,8 +25,10 @@
             <li>No passengers.</li>
         {% endfor %}
       </ul>
-      <h2>Add a Passenger</h2>
-
+      <div class="text-center-2">
+        <h2>Book a Passenger on Flight {{ flight.id }}</h2>
+      </div>
+      <h3>Book Here</h3>
       {% if non_passengers %}
       <form action="{% url 'book' flight.id %}" method="post">
           {% csrf_token %}
